@@ -7,14 +7,14 @@ using System.Collections.Generic;
 
 namespace SvgToWpf.SvgBuilder
 {
-    internal abstract class SvgElement
+    public abstract class SvgElement
     {
-        protected readonly XElement Element;
+        protected readonly XElement SvgXmlElement;
         protected readonly Transform Transform;
 
         protected SvgElement(XElement element)
         {
-            Element = element;
+            SvgXmlElement = element;
             Transform = CreateElementTransform(element);
         }
 

@@ -6,6 +6,13 @@ namespace SvgToWpf
 {
     public class SvgParser : ISvgParser
     {
+        private readonly SvgElementFactory _svgElementFactory;
+
+        public SvgParser(SvgElementFactory svgElementFactory)
+        {
+            _svgElementFactory = svgElementFactory;
+        }
+
         public SvgParseResult ParseSvg(string svgFilePath)
         {
             var svgDocument = XDocument.Load(svgFilePath);
@@ -59,25 +66,7 @@ namespace SvgToWpf
 
         private SvgElement ParseSvgElement(XElement element)
         {
-            switch (element.Name.LocalName.ToLower())
-            {
-                default:
-                    return new UnknownSvg(element);
-
-                case "g":
-                    SvgGroup group = new SvgGroup(element);
-                    ParseGroupChildElements(group, element);
-                    return group;
-                case "path":
-                    return new SvgPath(element);
-                case "rectangle":
-                case "rect":
-                    return new SvgRectangle(element);
-                case "ellipse":
-                    return new SvgEllipse(element);
-                case "polygon":
-                    return new SvgPolygon(element);
-            }
+            return _svgElementFactory.ParseSvgElement(element);
         }
 
         private void ParseGroupChildElements(SvgGroup group, XElement groupElement)

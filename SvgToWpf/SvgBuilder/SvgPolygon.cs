@@ -11,7 +11,7 @@ namespace SvgToWpf.SvgBuilder
 
         public override Geometry CreateGeometry()
         {
-            return ParsePolygon(Element);
+            return ParsePolygon(SvgXmlElement);
         }
 
         private Geometry ParsePolygon(XElement poly)

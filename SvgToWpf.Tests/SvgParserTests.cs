@@ -11,7 +11,7 @@ namespace SvgToWpf.Tests
 
         public SvgParserTests()
         {
-            _svgParser = new SvgParser();
+            _svgParser = new SvgParser(SvgElementFactory.DefaultFactory());
         }
 
         [Fact]

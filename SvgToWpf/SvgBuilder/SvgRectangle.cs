@@ -12,7 +12,7 @@ namespace SvgToWpf.SvgBuilder
 
         public override Geometry CreateGeometry()
         {
-            return ParseRectangleGeometry(Element);
+            return ParseRectangleGeometry(SvgXmlElement);
         }
 
         private Geometry ParseRectangleGeometry(XElement rectangle)

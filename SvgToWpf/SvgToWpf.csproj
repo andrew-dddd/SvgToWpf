@@ -55,6 +55,7 @@
     <Compile Include="SvgBuilder\SvgRectangle.cs" />
     <Compile Include="SvgBuilder\TransformType.cs" />
     <Compile Include="SvgBuilder\UnknownSvg.cs" />
+    <Compile Include="SvgElementFactory.cs" />
     <Compile Include="SvgParser.cs" />
     <Compile Include="SvgParseResult.cs" />
   </ItemGroup>

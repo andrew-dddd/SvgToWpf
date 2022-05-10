@@ -11,7 +11,7 @@ namespace SvgToWpf.SvgBuilder
 
         public override Geometry CreateGeometry()
         {
-            return CreateEllipseGeometry(Element);
+            return CreateEllipseGeometry(SvgXmlElement);
         }
 
         private Geometry CreateEllipseGeometry(XElement element)
