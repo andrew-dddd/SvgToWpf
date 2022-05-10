@@ -1,0 +1,12 @@
+version: 1.0.{build}
+clone_depth: 50
+build_script:
+- pwsh: >-
+    nuget restore
+
+    msbuild /p:Configuration=Release SvgToWpf.sln
+test_script:
+- pwsh: >-
+    nuget install xunit.runner.console -Version 2.4.1 -OutputDirectory testrunner
+
+    testrunner\xunit.runner.console.2.4.1\tools\net472\xunit.console.exe .\SvgToWpf.Tests\bin\Release\SvgToWpf.Tests.dll
