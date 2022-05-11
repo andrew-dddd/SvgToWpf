@@ -37,6 +37,7 @@ namespace SvgToWpf.SvgBuilder
                 combinedGeometry = new CombinedGeometry(GeometryCombineMode.Union, combinedGeometry ?? Geometry.Empty, graphicElement.CreateGeometry());
             }
 
+            combinedGeometry.Transform = Transform;
             return combinedGeometry;
         }
 

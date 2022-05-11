@@ -162,11 +162,10 @@ namespace SvgToWpf.SvgBuilder
                     };
                     break;
                 case TransformType.TranslateTransform:
-                    transform = new TranslateTransform { X = parameters[0], Y = parameters[1] };
+                    transform = new TranslateTransform { X = parameters.ElementAtOrDefault(0), Y = parameters.ElementAtOrDefault(1) };
                     break;
                 case TransformType.MatrixTransform:
-                    transform = new MatrixTransform(parameters[0], parameters[1], parameters[2], parameters[3],
-                        parameters[4], parameters[5]);
+                    transform = new MatrixTransform(parameters[0], parameters[1], parameters[2], parameters[3], parameters[4], parameters[5]);
                     break;
             }
 
