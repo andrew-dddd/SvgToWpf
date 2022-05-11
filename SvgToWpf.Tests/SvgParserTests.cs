@@ -110,5 +110,25 @@ namespace SvgToWpf.Tests
             // Assert
             (pg as CombinedGeometry).Geometry2.Should().BeOfType<PathGeometry>();
         }
+
+        [Fact]
+        public void SvgBuilder_ShouldRandomText_WithTranslateTransform()
+        {
+            // Arrange
+            var svg = XDocument.Load(".\\Files\\random_text.svg");
+
+            // Act
+            var builder = _svgParser.CreateSvgBuilder(svg.Root);
+            var pg = builder.CreateGeometry();
+
+            // Assert
+            (pg as CombinedGeometry).Geometry2.Should().BeOfType<CombinedGeometry>();
+
+            var transform = ((pg as CombinedGeometry).Geometry2 as CombinedGeometry).Geometry2.Transform as TranslateTransform;
+
+            transform.Should().NotBeNull();
+            transform.X.Should().Be(-26.39142D);
+            transform.Y.Should().Be(9.53669D);
+        }
     }
 }
