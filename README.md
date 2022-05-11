@@ -4,6 +4,6 @@
 SvgToWpf allows to parse svg file directly to WPF Geometries. Based on project: https://github.com/narendragoudelli/SvgToPathGeometry
 
 # Abilities
-- able to parse groups
-- able to parse transforms
+- parse groups
+- parse transforms
 - creates WPF Geometries which can be directly displayed in WPF Canvas
