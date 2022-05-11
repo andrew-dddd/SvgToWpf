@@ -112,7 +112,7 @@ namespace SvgToWpf.Tests
         }
 
         [Fact]
-        public void SvgBuilder_ShouldReadSpiral_AsPathGeometry2()
+        public void SvgBuilder_ShouldRandomText_WithTranslateTransform()
         {
             // Arrange
             var svg = XDocument.Load(".\\Files\\random_text.svg");
